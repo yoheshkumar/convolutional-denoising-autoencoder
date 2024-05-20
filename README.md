@@ -92,7 +92,16 @@ autoencoder.fit(x_train_noisy, x_train_scaled,
                 batch_size=128,
                 shuffle=True,
                 validation_data=(x_test_noisy, x_test_scaled))
+
+
+print("YOHESH KUMAR R.M")
+print("212222240118")
+metrics = pd.DataFrame(autoencoder.history.history)
+metrics[['loss','val_loss']].plot()
+
 decoded_imgs = autoencoder.predict(x_test_noisy)
+print("YOHESH KUMAR R.M")
+print("212222240118")
 n = 10
 plt.figure(figsize=(20, 4))
 for i in range(1, n + 1):
@@ -108,7 +117,7 @@ for i in range(1, n + 1):
     plt.imshow(x_test_noisy[i].reshape(28, 28))
     plt.gray()
     ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)    
+    ax.get_yaxis().set_visible(False)
 
     # Display reconstruction
     ax = plt.subplot(3, n, i + 2*n)
